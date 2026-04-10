@@ -13,6 +13,10 @@ export const metadata: Metadata = {
   title: "Flowpace.ai — Custom AI Agents. Managed Intelligence.",
   description:
     "We build, deploy, and manage custom AI agent systems that transform your entire business. Set the Pace. Own the Flow.",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     title: "Flowpace.ai — Set the Pace. Own the Flow.",
     description:

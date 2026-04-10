@@ -59,8 +59,8 @@ export default function SimsWorkspacePage() {
     <main className="bg-background min-h-screen">
       {/* Hero */}
       <section className="py-32 pt-40 px-4 text-center">
-        <div className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-success/10 text-success border border-success/20 mb-4">
-          Live
+        <div className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 mb-4">
+          Coming Soon
         </div>
         <h1 className="text-4xl md:text-5xl font-bold text-heading">
           SimsWorkspace
@@ -68,15 +68,22 @@ export default function SimsWorkspacePage() {
         <p className="text-body mt-4 max-w-2xl mx-auto text-lg">
           Your AI Agent Command Center
         </p>
+        <p className="text-muted mt-2 max-w-lg mx-auto text-sm">
+          We&apos;re building the ultimate dashboard to visualize and orchestrate
+          your AI agents in real-time. Stay tuned.
+        </p>
       </section>
 
-      {/* Features Grid */}
+      {/* Features Preview */}
       <section className="max-w-5xl mx-auto px-4 pb-16">
+        <h2 className="text-2xl font-bold text-heading mb-8 text-center">
+          What&apos;s Coming
+        </h2>
         <div className="grid lg:grid-cols-2 gap-6">
           {features.map((feature) => {
             const Icon = feature.icon;
             return (
-              <div key={feature.title} className="section-card">
+              <div key={feature.title} className="section-card opacity-80">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
                     <Icon className="w-5 h-5 text-accent" />
@@ -94,29 +101,20 @@ export default function SimsWorkspacePage() {
         </div>
       </section>
 
-      {/* Agent Visualization Placeholder */}
-      <section className="max-w-5xl mx-auto px-4 pb-16">
-        <div className="section-card">
-          <div className="bg-zinc-900/50 rounded-xl h-[400px] flex items-center justify-center">
-            <p className="text-muted text-sm">Agent Dashboard Preview</p>
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="py-24 text-center px-4">
         <h2 className="text-3xl font-bold text-heading mb-4">
-          Take Control of Your AI Agents
+          Want Early Access?
         </h2>
         <p className="text-body max-w-xl mx-auto mb-8">
-          See SimsWorkspace in action. Book a demo and we&apos;ll walk you
-          through your custom setup.
+          Be the first to know when SimsWorkspace launches. Book a call and
+          we&apos;ll add you to the waitlist.
         </p>
         <Link
           href="/contact"
           className="inline-flex items-center justify-center px-10 py-4 text-lg font-medium rounded-full bg-accent hover:bg-accent-light text-white transition-colors"
         >
-          Book a Demo
+          Join the Waitlist
         </Link>
       </section>
     </main>

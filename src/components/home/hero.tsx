@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { HeroNetworkAnimation } from "@/components/hero-network-animation";
 import { CTAButton } from "@/components/cta-button";
+import { ChevronDown } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -15,7 +16,7 @@ const fadeUp = {
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[75vh] flex items-start justify-center pt-32 md:pt-40 overflow-hidden">
       {/* Background animation */}
       <div className="absolute inset-0 z-0">
         <HeroNetworkAnimation />
@@ -26,14 +27,33 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center text-center px-6">
-        <motion.h1
-          className="text-5xl md:text-6xl lg:text-7xl font-bold text-heading tracking-tight"
+        {/* Badge */}
+        <motion.div
+          className="mb-6 inline-flex items-center gap-2 glass rounded-full px-4 py-1.5"
           variants={fadeUp}
           initial="hidden"
           animate="visible"
           custom={0}
         >
-          Set the Pace. Own the Flow.
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-accent" />
+          </span>
+          <span className="text-xs font-medium text-body">AI-Powered Business Automation</span>
+        </motion.div>
+
+        <motion.h1
+          className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight"
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          custom={1}
+        >
+          <span className="text-heading">Set the Pace.</span>
+          <br />
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent via-accent-light to-accent">
+            Own the Flow.
+          </span>
         </motion.h1>
 
         <motion.p
@@ -41,7 +61,7 @@ export function Hero() {
           variants={fadeUp}
           initial="hidden"
           animate="visible"
-          custom={1}
+          custom={2}
         >
           Custom AI agent systems that transform your entire business — not just
           your inbox.
@@ -52,9 +72,9 @@ export function Hero() {
           variants={fadeUp}
           initial="hidden"
           animate="visible"
-          custom={2}
+          custom={3}
         >
-          <CTAButton variant="primary" size="large" href="#contact">
+          <CTAButton variant="primary" size="large" href="/contact">
             Book a Discovery Call
           </CTAButton>
           <CTAButton variant="ghost" size="large" href="#how-it-works">
@@ -62,15 +82,39 @@ export function Hero() {
           </CTAButton>
         </motion.div>
 
-        <motion.p
-          className="mt-16 text-muted text-sm text-center"
+        {/* Hook */}
+        <motion.div
+          className="mt-16 flex flex-col items-center text-center"
           variants={fadeUp}
           initial="hidden"
           animate="visible"
-          custom={3}
+          custom={4}
         >
-          Trusted by businesses across 6+ industries
-        </motion.p>
+          <h2 className="text-2xl md:text-3xl font-bold text-heading">
+            Your Business Is Unique.
+          </h2>
+          <p className="text-xl md:text-2xl font-bold text-muted mt-1">
+            Why Is Your AI Generic?
+          </p>
+        </motion.div>
+
+        {/* Scroll down arrow */}
+        <motion.a
+          href="#how-it-works"
+          className="mt-20 flex flex-col items-center gap-2 text-muted hover:text-body transition-colors cursor-pointer"
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          custom={5}
+        >
+          <span className="text-xs font-medium uppercase tracking-widest">How it works</span>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <ChevronDown className="w-5 h-5" />
+          </motion.div>
+        </motion.a>
       </div>
     </section>
   );

@@ -5,8 +5,8 @@ import { CTAButton } from "@/components/cta-button";
 
 export function FinalCTA() {
   return (
-    <section className="py-24 px-4">
-      <div className="max-w-7xl mx-auto bg-surface rounded-2xl p-12 md:p-16 text-center relative overflow-hidden">
+    <section className="py-14 md:py-20 px-4">
+      <div className="max-w-7xl mx-auto backdrop-blur-md bg-white/[0.04] border border-white/[0.07] rounded-2xl p-12 md:p-16 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-accent/5" />
 
         <motion.div

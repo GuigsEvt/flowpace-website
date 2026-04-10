@@ -265,7 +265,7 @@ export default function ManagedAIOpsPage() {
           {faqs.map((faq) => (
             <details
               key={faq.q}
-              className="group bg-surface rounded-2xl border border-white/5 overflow-hidden"
+              className="group glass-card overflow-hidden"
             >
               <summary className="cursor-pointer px-6 py-4 text-heading font-medium list-none flex items-center justify-between">
                 {faq.q}

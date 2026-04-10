@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AlertTriangle } from "lucide-react";
 import { industries } from "@/lib/data/industries";
+import { IndustryHero } from "@/components/industry-hero";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -31,19 +32,7 @@ export default async function IndustryPage({ params }: PageProps) {
   return (
     <main className="bg-background min-h-screen">
       {/* Hero */}
-      <section className="py-32 pt-40 px-4 text-center relative overflow-hidden">
-        <div
-          className={`absolute inset-0 bg-gradient-to-br ${industry.gradient} opacity-40`}
-        />
-        <div className="relative z-10">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-heading">
-            {industry.name}
-          </h1>
-          <p className="text-body mt-4 max-w-2xl mx-auto text-lg">
-            {industry.tagline}
-          </p>
-        </div>
-      </section>
+      <IndustryHero name={industry.name} tagline={industry.tagline} image={industry.image} />
 
       {/* Pain Points */}
       <section className="py-24 px-4">

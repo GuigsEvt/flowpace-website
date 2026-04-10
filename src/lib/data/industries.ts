@@ -4,6 +4,7 @@ export interface Industry {
   tagline: string;
   description: string;
   gradient: string;
+  image: string;
   painPoints: {
     title: string;
     description: string;
@@ -28,6 +29,7 @@ export const industries: Industry[] = [
     description:
       "AI agents that handle rate calculations, customs documentation, shipment tracking, and client communication — reducing manual overhead by 80%.",
     gradient: "from-blue-900/40 to-blue-600/10",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=500&fit=crop&q=80",
     painPoints: [
       {
         title: "Manual Quote Calculations",
@@ -71,6 +73,7 @@ export const industries: Industry[] = [
     description:
       "AI-powered guest communication, dynamic pricing, review management, and maintenance coordination — for hosts managing 1 or 100 properties.",
     gradient: "from-amber-900/40 to-orange-600/10",
+    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=500&fit=crop&q=80",
     painPoints: [
       {
         title: "24/7 Guest Messages",
@@ -114,6 +117,7 @@ export const industries: Industry[] = [
     description:
       "AI agents that source deals, analyze pitch decks, run due diligence, and generate investment memos — giving your fund a data-driven edge.",
     gradient: "from-emerald-900/40 to-green-600/10",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop&q=80",
     painPoints: [
       {
         title: "Deal Flow Overload",
@@ -157,6 +161,7 @@ export const industries: Industry[] = [
     description:
       "AI agents for claims processing, policy analysis, underwriting support, and customer communication — reducing processing time by 60%.",
     gradient: "from-purple-900/40 to-violet-600/10",
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=500&fit=crop&q=80",
     painPoints: [
       {
         title: "Slow Claims Processing",

@@ -16,7 +16,7 @@ export const products: Product[] = [
     description:
       "Visualize and orchestrate your AI agents in real-time. Monitor status, manage workflows, and control your entire agent fleet from one dashboard.",
     icon: "LayoutDashboard",
-    badge: "Live",
+    badge: "Coming Soon",
     features: [
       "Real-time agent status monitoring",
       "Visual workflow orchestration",

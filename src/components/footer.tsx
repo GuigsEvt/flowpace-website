@@ -12,14 +12,13 @@ const footerLinks = {
     { label: "Venture Capital", href: "/industries/venture-capital" },
     { label: "Insurance", href: "/industries/insurance" },
   ],
-  Products: [
-    { label: "SimsWorkspace", href: "/products/sims-workspace" },
-    { label: "Whisper Dictate", href: "/products/whisper-dictate" },
-    { label: "Managed AIOps", href: "/managed-aiops" },
+  "Open Source": [
+    { label: "Whisper Dictate", href: "/open-source/whisper-dictate" },
+    { label: "SimsWorkspace", href: "/open-source/sims-workspace" },
   ],
   Resources: [
     { label: "Blog", href: "/blog" },
-    { label: "Open Source", href: "#open-source" },
+    { label: "Managed AIOps", href: "/managed-aiops" },
   ],
 };
 

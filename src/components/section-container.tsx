@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
 interface SectionContainerProps {
+  id?: string;
   pill?: string;
   children: React.ReactNode;
   className?: string;
@@ -12,13 +13,14 @@ interface SectionContainerProps {
 }
 
 export function SectionContainer({
+  id,
   pill,
   children,
   className,
   dark,
 }: SectionContainerProps) {
   return (
-    <section className="py-24 md:py-32 px-4">
+    <section id={id} className="py-14 md:py-20 px-4 scroll-mt-20">
       <motion.div
         className="max-w-7xl mx-auto"
         initial={{ opacity: 0, y: 30 }}

@@ -19,7 +19,7 @@ export default function ContactPage() {
   return (
     <main className="bg-background min-h-screen">
       {/* Hero */}
-      <section className="py-32 pt-40 px-4 text-center">
+      <section className="pt-24 pb-8 px-4 text-center">
         <h1 className="text-4xl md:text-5xl font-bold text-heading">
           Let&apos;s Build Something Together
         </h1>
@@ -31,15 +31,12 @@ export default function ContactPage() {
 
       {/* About + Calendly */}
       <section className="max-w-5xl mx-auto px-4 pb-24">
-        {/* About Section */}
+        {/* About Section -- uncomment when ready
         <div className="glass-card p-8">
           <div className="grid md:grid-cols-[200px_1fr] gap-8 items-center">
-            {/* Photo Placeholder */}
             <div className="flex justify-center md:justify-start">
               <div className="w-32 h-32 rounded-full bg-zinc-800" />
             </div>
-
-            {/* Bio */}
             <div>
               <h2 className="text-2xl font-bold text-heading">
                 Guillaume Evrat
@@ -67,6 +64,7 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
+        */}
 
         {/* Calendly Section */}
         <div className="mt-12">
@@ -89,11 +87,13 @@ export default function ContactPage() {
               </ul>
             </div>
 
-            {/* Calendly Embed Placeholder */}
-            <div className="section-card">
-              <div className="bg-zinc-900 rounded-xl h-[500px] flex items-center justify-center">
-                <p className="text-muted text-sm">Calendly Booking Widget</p>
-              </div>
+            {/* Calendly Embed -- replace YOUR_CALENDLY_USERNAME/EVENT with your actual link */}
+            <div className="section-card overflow-hidden">
+              <iframe
+                src="https://calendly.com/evrat-guillaume/30min?hide_gdpr_banner=1&background_color=101012&text_color=fafafa&primary_color=1a73e8"
+                className="w-full h-[600px] rounded-xl border-0"
+                title="Book a call"
+              />
             </div>
           </div>
         </div>

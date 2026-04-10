@@ -33,7 +33,7 @@ export function WhySection() {
 
         {/* Right column — comparison card */}
         <motion.div
-          className="bg-zinc-900/60 rounded-xl border border-white/5 p-6"
+          className="glass-card p-6"
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}

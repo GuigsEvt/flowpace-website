@@ -5,10 +5,10 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-background: #09090B;
+  --color-background: #101012;
   --color-foreground: #FAFAFA;
-  --color-surface: #111113;
-  --color-surface-hover: #1A1A1D;
+  --color-surface: #161618;
+  --color-surface-hover: #1e1e21;
 
   --color-accent: #1A73E8;
   --color-accent-light: #4A9AFF;
@@ -20,17 +20,17 @@
   --color-body: #A1A1AA;
   --color-muted: #71717A;
 
-  --color-card: #111113;
+  --color-card: #161618;
   --color-card-foreground: #FAFAFA;
-  --color-popover: #111113;
+  --color-popover: #161618;
   --color-popover-foreground: #FAFAFA;
   --color-primary: #1A73E8;
   --color-primary-foreground: #FFFFFF;
-  --color-secondary: #1A1A1D;
+  --color-secondary: #1e1e21;
   --color-secondary-foreground: #FAFAFA;
   --color-destructive: #EF4444;
-  --color-border: rgba(255, 255, 255, 0.05);
-  --color-input: rgba(255, 255, 255, 0.1);
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-input: rgba(255, 255, 255, 0.12);
   --color-ring: #1A73E8;
 
   --font-sans: var(--font-inter);
@@ -64,16 +64,32 @@
 
 @layer components {
   .glass {
-    @apply backdrop-blur-xl bg-white/5 border border-white/10;
+    @apply backdrop-blur-xl bg-white/[0.06] border border-white/[0.08];
   }
   .glass-heavy {
-    @apply backdrop-blur-2xl bg-white/10 border border-white/15;
+    @apply backdrop-blur-2xl bg-white/[0.1] border border-white/[0.12];
   }
   .glass-card {
-    @apply backdrop-blur-md bg-zinc-900/80 border border-white/5 rounded-2xl;
+    @apply backdrop-blur-md bg-white/[0.04] border border-white/[0.07] rounded-2xl
+      transition-all duration-300 ease-out;
+  }
+  .glass-card:hover {
+    @apply bg-white/[0.07] border-white/[0.15];
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.05),
+      0 8px 32px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
   }
   .section-card {
-    @apply bg-surface rounded-2xl border border-white/5 p-8 md:p-12 relative overflow-hidden;
+    @apply backdrop-blur-md bg-white/[0.03] rounded-2xl border border-white/[0.07] p-8 md:p-12 relative overflow-hidden
+      transition-all duration-300 ease-out;
+  }
+  .section-card:hover {
+    @apply bg-white/[0.06] border-white/[0.14];
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.04),
+      0 8px 32px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
   }
   .accent-glow {
     box-shadow: 0 0 30px rgba(26, 115, 232, 0.25);

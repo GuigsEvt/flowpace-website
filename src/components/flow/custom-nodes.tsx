@@ -12,7 +12,7 @@ const handleStyle = {
 
 function ToolsNode() {
   return (
-    <div className="backdrop-blur-md bg-zinc-900/80 border border-white/10 rounded-xl p-4 min-w-[180px]">
+    <div className="cursor-grab active:cursor-grabbing backdrop-blur-md bg-white/[0.04] border border-white/[0.07] rounded-xl transition-all duration-300 hover:bg-white/[0.07] hover:border-white/[0.15] hover:shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.06)] p-4 min-w-[180px]">
       <div className="text-heading font-medium text-sm mb-3">Your Tools</div>
       <div className="grid grid-cols-2 gap-2">
         {[
@@ -37,7 +37,7 @@ function ToolsNode() {
 
 function EngineNode() {
   return (
-    <div className="backdrop-blur-md bg-zinc-900/80 border border-white/10 rounded-xl p-4 min-w-[220px] shadow-[0_0_20px_rgba(26,115,232,0.15)]">
+    <div className="cursor-grab active:cursor-grabbing backdrop-blur-md bg-white/[0.04] border border-white/[0.07] rounded-xl transition-all duration-300 hover:bg-white/[0.07] hover:border-white/[0.15] hover:shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.06)] p-4 min-w-[220px] shadow-[0_0_20px_rgba(26,115,232,0.15)]">
       <div className="text-heading font-medium text-sm mb-3">
         Flowpace AI Engine
       </div>
@@ -60,7 +60,7 @@ function EngineNode() {
 
 function AgentsNode() {
   return (
-    <div className="backdrop-blur-md bg-zinc-900/80 border border-white/10 rounded-xl p-4 min-w-[180px]">
+    <div className="cursor-grab active:cursor-grabbing backdrop-blur-md bg-white/[0.04] border border-white/[0.07] rounded-xl transition-all duration-300 hover:bg-white/[0.07] hover:border-white/[0.15] hover:shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.06)] p-4 min-w-[180px]">
       <div className="text-heading font-medium text-sm mb-3">
         Custom Agents
       </div>
@@ -83,7 +83,7 @@ function AgentsNode() {
 
 function ResultsNode() {
   return (
-    <div className="backdrop-blur-md bg-zinc-900/80 border border-white/10 rounded-xl p-4 min-w-[160px]">
+    <div className="cursor-grab active:cursor-grabbing backdrop-blur-md bg-white/[0.04] border border-white/[0.07] rounded-xl transition-all duration-300 hover:bg-white/[0.07] hover:border-white/[0.15] hover:shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.06)] p-4 min-w-[160px]">
       <div className="text-heading font-medium text-sm mb-3">Results</div>
       <div className="flex items-center gap-2 text-muted text-xs">
         <BarChart3 className="w-4 h-4 text-[#1A73E8]" />

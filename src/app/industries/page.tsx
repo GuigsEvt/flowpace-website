@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { industries } from "@/lib/data/industries";
 
@@ -26,13 +27,21 @@ export default function IndustriesPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {industries.map((industry) => (
             <Link key={industry.slug} href={`/industries/${industry.slug}`}>
-              <div className="section-card group relative h-full cursor-pointer transition-all duration-300 hover:border-white/10 hover:shadow-lg hover:shadow-white/5">
-                {/* Gradient overlay */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${industry.gradient} rounded-2xl opacity-60 transition-opacity group-hover:opacity-80`}
-                />
+              <div className="group relative h-full cursor-pointer rounded-2xl overflow-hidden border border-white/[0.07] transition-all duration-300 hover:border-white/[0.15] hover:shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.06)]">
+                {/* Image */}
+                <div className="relative h-40 overflow-hidden">
+                  <Image
+                    src={industry.image}
+                    alt={industry.name}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors duration-300" />
+                </div>
 
-                <div className="relative z-10 flex flex-col gap-4 min-h-[200px] justify-between">
+                {/* Content */}
+                <div className="backdrop-blur-md bg-white/[0.04] p-6 flex flex-col gap-4 min-h-[140px] justify-between">
                   <div>
                     <h3 className="text-xl font-bold text-heading">
                       {industry.name}

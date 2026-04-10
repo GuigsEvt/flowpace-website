@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 interface CTAButtonProps {
   children: React.ReactNode;
   variant?: "primary" | "ghost";
-  size?: "default" | "large";
+  size?: "small" | "default" | "large";
   href?: string;
   onClick?: () => void;
   className?: string;
@@ -23,7 +23,11 @@ export function CTAButton({
   const baseClasses =
     "inline-flex items-center justify-center font-medium rounded-full transition-colors";
   const sizeClasses =
-    size === "large" ? "px-10 py-4 text-lg" : "px-8 py-3 text-sm";
+    size === "large"
+      ? "px-10 py-4 text-lg"
+      : size === "small"
+        ? "px-5 py-1.5 text-[13px]"
+        : "px-8 py-3 text-sm";
 
   const variantClasses =
     variant === "primary"
