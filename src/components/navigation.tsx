@@ -15,6 +15,7 @@ const navLinks = [
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -58,7 +59,7 @@ export function Navigation() {
         </div>
 
         <div className="md:hidden">
-          <Sheet>
+          <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
             <SheetTrigger render={<button className="text-heading p-2" />}>
               <Menu className="w-6 h-6" />
             </SheetTrigger>
@@ -69,11 +70,12 @@ export function Navigation() {
                     key={link.label}
                     href={link.href}
                     className="text-lg font-medium text-heading"
+                    onClick={() => setMobileOpen(false)}
                   >
                     {link.label}
                   </Link>
                 ))}
-                <CTAButton href="/contact" variant="primary" className="mt-4">
+                <CTAButton href="/contact" variant="primary" className="mt-4" onClick={() => setMobileOpen(false)}>
                   Let&apos;s talk
                 </CTAButton>
               </div>
