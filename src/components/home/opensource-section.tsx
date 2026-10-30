@@ -1,37 +1,39 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
-import { Mic, Activity, LayoutDashboard } from "lucide-react";
+import { Mic, Trash2, FileSearch } from "lucide-react";
 import { SectionContainer } from "@/components/section-container";
 
 const projects = [
   {
+    icon: FileSearch,
+    title: "Steno ASR",
+    description:
+      "French speech recognition built on EmbeddingGemma 2. Transcription with capitalization and punctuation in a single pass — faster than real-time on a standard laptop.",
+    status: "Live" as const,
+    href: "https://github.com/GuigsEvt/steno-asr",
+    site: "https://steno.flowpace.ai",
+    tags: ["PyTorch", "ASR", "French", "CTC"],
+  },
+  {
+    icon: Trash2,
+    title: "Vibe Cleaner",
+    description:
+      "An AI-powered Mac cleanup tool. Open source alternative to CleanMyMac, built for developers who want to understand what's actually eating their disk.",
+    status: "Coming Soon" as const,
+    href: null,
+    site: null,
+    tags: ["macOS", "Python", "CLI"],
+  },
+  {
     icon: Mic,
     title: "Whisper Dictate",
     description:
-      "Local-first voice dictation powered by OpenAI Whisper. Fast, private, and accurate transcription right from your desktop.",
+      "Local-first voice dictation powered by OpenAI Whisper. Fast, private, and accurate transcription right from your desktop. No cloud, no data sent anywhere.",
     status: "Live" as const,
-    cta: "View on GitHub",
-    href: "/open-source/whisper-dictate",
-  },
-  {
-    icon: Activity,
-    title: "Strava AI Intelligence",
-    description:
-      "AI-powered training insights from your Strava data. Personalized analytics, recovery predictions, and performance trends.",
-    status: "Coming Soon" as const,
-    cta: "Join Waitlist",
-    href: "/contact",
-  },
-  {
-    icon: LayoutDashboard,
-    title: "SimsWorkspace",
-    description:
-      "An open-source workspace for running and managing AI agent simulations. Test, iterate, and deploy with confidence.",
-    status: "Coming Soon" as const,
-    cta: "Learn More",
-    href: "/open-source/sims-workspace",
+    href: "#",
+    site: null,
+    tags: ["Whisper", "macOS", "Local"],
   },
 ];
 
@@ -43,43 +45,67 @@ const statusStyles = {
 export function OpenSourceSection() {
   return (
     <SectionContainer pill="Open Source">
+      <div id="projects" className="scroll-mt-20" />
       <h2 className="text-3xl md:text-4xl font-bold text-heading">
-        Explore Our Open-Source Tools
+        What I&apos;m shipping
       </h2>
       <p className="text-body mt-4 max-w-2xl">
-        We contribute back to the community with tools we use ourselves. Battle-tested,
-        well-documented, and free to use.
+        Tools I build for fun, learning, or because I needed them. All open source,
+        all free to use and fork.
       </p>
 
       <div className="grid lg:grid-cols-3 gap-6 mt-12">
         {projects.map((project, i) => (
-          <Link key={project.title} href={project.href}>
-            <motion.div
-              className="glass-card p-8 h-full cursor-pointer"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-            >
-              <project.icon className="w-8 h-8 text-accent" />
-              <h3 className="font-bold text-heading mt-4">{project.title}</h3>
-              <p className="text-body mt-2">{project.description}</p>
-              <span
-                className={`${statusStyles[project.status]} rounded-full px-3 py-1 text-xs mt-4 inline-block`}
-              >
+          <motion.div
+            key={project.title}
+            className="glass-card p-8 flex flex-col"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: i * 0.1 }}
+          >
+            <project.icon className="w-8 h-8 text-accent" />
+            <h3 className="font-bold text-heading mt-4 text-lg">{project.title}</h3>
+            <p className="text-body mt-2 text-sm leading-relaxed flex-1">{project.description}</p>
+            <div className="flex flex-wrap gap-2 mt-4">
+              {project.tags.map((tag) => (
+                <span key={tag} className="px-2 py-0.5 rounded-md bg-white/5 text-muted text-xs">
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <div className="flex items-center justify-between mt-5">
+              <span className={`${statusStyles[project.status]} rounded-full px-3 py-1 text-xs`}>
                 {project.status}
               </span>
-              <span className="text-accent hover:text-accent-light text-sm mt-4 block">
-                {project.cta} &rarr;
-              </span>
-            </motion.div>
-          </Link>
+              <div className="flex items-center gap-3">
+                {project.site && (
+                  <a
+                    href={project.site}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-body hover:text-heading text-sm transition-colors"
+                  >
+                    Live &rarr;
+                  </a>
+                )}
+                {project.href && project.href !== "#" ? (
+                  <a
+                    href={project.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-accent hover:text-accent-light text-sm transition-colors"
+                  >
+                    GitHub &rarr;
+                  </a>
+                ) : !project.href ? (
+                  <span className="text-muted text-sm">Coming soon</span>
+                ) : null}
+              </div>
+            </div>
+          </motion.div>
         ))}
       </div>
-
-      <p className="text-muted text-sm text-center mt-12">
-        We build in public. Follow our journey and contribute on GitHub.
-      </p>
     </SectionContainer>
   );
 }

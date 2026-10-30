@@ -1,58 +1,58 @@
 import type { Metadata } from "next";
-import { Check } from "lucide-react";
+import Image from "next/image";
+import { CalendlyEmbed } from "@/components/calendly-embed";
 
 export const metadata: Metadata = {
-  title: "Contact | Flowpace.ai",
+  title: "Contact | flowpace.ai",
 };
-
-const trustBadges = ["6+ Industries", "Custom Solutions", "Managed Service"];
-
-const valueProps = [
-  "Understand your business goals and current tech stack",
-  "Identify high-impact AI opportunities specific to your operations",
-  "Map out a phased deployment plan with clear milestones",
-  "Discuss pricing, timelines, and managed service options",
-  "Answer any questions about our platform and approach",
-];
 
 export default function ContactPage() {
   return (
     <main className="bg-background min-h-screen">
-      {/* Hero */}
-      <section className="pt-24 pb-8 px-4 text-center">
+      <section className="py-32 pt-40 px-4 text-center">
         <h1 className="text-4xl md:text-5xl font-bold text-heading">
-          Let&apos;s Build Something Together
+          Let&apos;s grab 30 minutes
         </h1>
-        <p className="text-body mt-4 max-w-2xl mx-auto text-lg">
-          Book a free consultation to explore how custom AI agents can transform
-          your business.
+        <p className="text-body mt-4 max-w-xl mx-auto text-lg">
+          I love meeting people curious about AI. No agenda, no pitch —
+          just a real conversation about what you&apos;re building or thinking about.
         </p>
       </section>
 
-      {/* About + Calendly */}
       <section className="max-w-5xl mx-auto px-4 pb-24">
-        {/* About Section -- uncomment when ready
         <div className="glass-card p-8">
-          <div className="grid md:grid-cols-[200px_1fr] gap-8 items-center">
+          <div className="grid md:grid-cols-[180px_1fr] gap-8 items-start">
             <div className="flex justify-center md:justify-start">
-              <div className="w-32 h-32 rounded-full bg-zinc-800" />
+              <div className="w-32 h-32 rounded-full overflow-hidden bg-zinc-800 relative">
+                <Image
+                  src="/me.png"
+                  alt="Guillaume Evrat"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
+
             <div>
-              <h2 className="text-2xl font-bold text-heading">
-                Guillaume Evrat
-              </h2>
+              <h2 className="text-2xl font-bold text-heading">Guillaume Evrat</h2>
               <p className="text-accent text-sm font-medium mt-1">
-                Founder, Flowpace.ai
+                CTO at{" "}
+                <a
+                  href="https://paatch.ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-accent-light transition-colors"
+                >
+                  paatch.ai
+                </a>
               </p>
-              <p className="text-body mt-4 leading-relaxed">
-                I build custom AI solutions that go beyond chatbots and
-                templates. With hands-on experience across freight, hospitality,
-                venture capital, insurance, and more, I focus on deploying
-                production-ready agent systems that deliver measurable ROI --
-                then managing them so you don&apos;t have to.
+              <p className="text-body mt-4 leading-relaxed max-w-xl">
+                I build AI tools and ship them as open source as a hobby, and help
+                democratize the use of AI and understanding it. The field moves incredibly
+                fast — I think the best way to keep up is to build, share, and learn together.
               </p>
               <div className="flex flex-wrap gap-3 mt-6">
-                {trustBadges.map((badge) => (
+                {["Open Source", "Local AI", "Building in public"].map((badge) => (
                   <span
                     key={badge}
                     className="px-4 py-1.5 text-xs font-medium rounded-full bg-accent/10 text-accent-light border border-accent/20"
@@ -64,38 +64,29 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
-        */}
 
-        {/* Calendly Section */}
-        <div className="mt-12">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Value Proposition */}
-            <div className="flex flex-col justify-center">
-              <h3 className="text-2xl font-bold text-heading mb-2">
-                What to Expect
-              </h3>
-              <p className="text-muted mb-6">
-                In a 30-minute call, we&apos;ll:
-              </p>
-              <ul className="space-y-4">
-                {valueProps.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-accent mt-0.5 shrink-0" />
-                    <span className="text-body">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Calendly Embed -- replace YOUR_CALENDLY_USERNAME/EVENT with your actual link */}
-            <div className="section-card overflow-hidden">
-              <iframe
-                src="https://calendly.com/evrat-guillaume/30min?hide_gdpr_banner=1&background_color=101012&text_color=fafafa&primary_color=1a73e8"
-                className="w-full h-[600px] rounded-xl border-0"
-                title="Book a call"
-              />
-            </div>
+        <div className="mt-12 grid lg:grid-cols-2 gap-12">
+          <div className="flex flex-col justify-center">
+            <h3 className="text-2xl font-bold text-heading mb-2">
+              What we can talk about
+            </h3>
+            <p className="text-muted mb-6">In 30 minutes, we can:</p>
+            <ul className="space-y-4">
+              {[
+                "Discuss what you're building and where AI can help",
+                "Share what's working (and not) in open source AI tooling",
+                "Talk about running models locally on Apple Silicon or NVIDIA",
+                "Just geek out about the current state of the field",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <span className="text-accent mt-0.5">→</span>
+                  <span className="text-body">{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
+
+          <CalendlyEmbed url="https://calendly.com/guillaume-paatch/30min" />
         </div>
       </section>
     </main>
