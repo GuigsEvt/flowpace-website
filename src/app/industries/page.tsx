@@ -16,7 +16,7 @@ export default function IndustriesPage() {
           Industries We Transform
         </h1>
         <p className="text-body mt-4 max-w-2xl mx-auto text-lg">
-          We build AI agents purpose-built for your industry — trained on
+          We build AI agents purpose-built for your industry, trained on
           domain-specific data, integrated with the tools you already use, and
           designed around the workflows that matter most.
         </p>
@@ -71,7 +71,7 @@ export default function IndustriesPage() {
           >
             Get in touch
           </Link>{" "}
-          — we build custom agents for any vertical.
+          we build custom agents for any vertical.
         </p>
       </section>
     </main>

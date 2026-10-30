@@ -79,7 +79,7 @@ export function AIOpsSection() {
       </motion.div>
 
       <p className="text-muted text-sm italic mt-8 text-center">
-        No fixed pricing — because your business isn&apos;t fixed. We
+        No fixed pricing, because your business isn&apos;t fixed. We
         custom-scope every engagement to your exact needs.
       </p>
 

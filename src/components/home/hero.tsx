@@ -53,7 +53,7 @@ export function Hero() {
           custom={2}
         >
           AI is moving fast. I ship tools, share what I learn, and keep everything open.
-          No hype — just things that actually work.
+          No hype, just things that actually work.
         </motion.p>
 
         <motion.div

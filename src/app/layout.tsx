@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Flowpace.ai — Custom AI Agents. Managed Intelligence.",
+  title: "Flowpace.ai: Custom AI Agents. Managed Intelligence.",
   description:
     "We build, deploy, and manage custom AI agent systems that transform your entire business. Set the Pace. Own the Flow.",
   icons: {
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "Flowpace.ai — Set the Pace. Own the Flow.",
+    title: "Flowpace.ai: Set the Pace. Own the Flow.",
     description:
       "Custom AI agent systems built for your business, managed by us.",
     url: "https://flowpace.ai",

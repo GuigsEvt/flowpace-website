@@ -9,7 +9,7 @@ const projects = [
     icon: FileSearch,
     title: "Steno ASR",
     description:
-      "French speech recognition built on EmbeddingGemma 2. Transcription with capitalization and punctuation in a single pass — faster than real-time on a standard laptop.",
+      "French speech recognition built on EmbeddingGemma 2. Transcription with capitalization and punctuation in a single pass, faster than real-time on a standard laptop.",
     status: "Live" as const,
     href: "https://github.com/GuigsEvt/steno-asr",
     site: "https://steno.flowpace.ai",

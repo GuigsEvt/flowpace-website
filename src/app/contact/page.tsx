@@ -14,7 +14,7 @@ export default function ContactPage() {
           Let&apos;s grab 30 minutes
         </h1>
         <p className="text-body mt-4 max-w-xl mx-auto text-lg">
-          I love meeting people curious about AI. No agenda, no pitch —
+          I love meeting people curious about AI. No agenda, no pitch,
           just a real conversation about what you&apos;re building or thinking about.
         </p>
       </section>
@@ -49,7 +49,7 @@ export default function ContactPage() {
               <p className="text-body mt-4 leading-relaxed max-w-xl">
                 I build AI tools and ship them as open source as a hobby, and help
                 democratize the use of AI and understanding it. The field moves incredibly
-                fast — I think the best way to keep up is to build, share, and learn together.
+                fast. I think the best way to keep up is to build, share, and learn together.
               </p>
               <div className="flex flex-wrap gap-3 mt-6">
                 {["Open Source", "Local AI", "Building in public"].map((badge) => (

@@ -18,7 +18,7 @@ export function FinalCTA() {
         </h2>
         <p className="text-body mt-4 max-w-xl mx-auto">
           I&apos;m always happy to meet new people building in this space.
-          Book 30 minutes — no pitch, just a conversation.
+          Book 30 minutes. No pitch, just a conversation.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row gap-4 items-center justify-center">
           <CTAButton variant="primary" size="large" href="/contact">

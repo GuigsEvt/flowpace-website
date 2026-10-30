@@ -10,7 +10,7 @@ const articles = [
     type: "Article",
     title: "Optimising NVIDIA's DGX Spark (Grace Blackwell 1.5)",
     description:
-      "A deep dive into squeezing real performance out of NVIDIA's DGX Spark — memory bandwidth, inference throughput, and the practical tradeoffs no one talks about.",
+      "A deep dive into squeezing real performance out of NVIDIA's DGX Spark: memory bandwidth, inference throughput, and the practical tradeoffs no one talks about.",
     href: "https://www.reddit.com/r/LocalLLaMA/comments/1p7ddv3/optimising_nvidias_dgx_spark_grace_blackwell_15/",
     meta: "r/LocalLLaMA · 2025",
     tags: ["NVIDIA", "DGX Spark", "Inference", "Optimization"],
