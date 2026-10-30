@@ -19,7 +19,7 @@ const projects = [
     icon: Trash2,
     title: "Vibe Cleaner",
     description:
-      "An AI-powered Mac cleanup tool. Open source alternative to CleanMyMac, built for developers who want to understand what's actually eating their disk.",
+      "First experimentation of full AI reverse engineering to create a desktop safety and cleaner for Mac. Pretty sure there will be no more offline paid desktop apps in the future.",
     status: "Coming Soon" as const,
     href: null,
     site: null,
@@ -31,7 +31,7 @@ const projects = [
     description:
       "Local-first voice dictation powered by OpenAI Whisper. Fast, private, and accurate transcription right from your desktop. No cloud, no data sent anywhere.",
     status: "Live" as const,
-    href: "#",
+    href: "https://github.com/GuigsEvt/whisper-dictate",
     site: null,
     tags: ["Whisper", "macOS", "Local"],
   },
