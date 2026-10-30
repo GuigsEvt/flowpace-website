@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mic, Trash2, FileSearch } from "lucide-react";
+import { Mic, Trash2, FileSearch, ArrowUpRight } from "lucide-react";
 import { SectionContainer } from "@/components/section-container";
 
 const projects = [
@@ -38,11 +38,13 @@ const projects = [
 ];
 
 const statusStyles = {
-  Live: "bg-green-500/20 text-green-400",
-  "Coming Soon": "bg-amber-500/20 text-amber-400",
+  Live: "bg-green-500/15 text-green-400 border border-green-500/20",
+  "Coming Soon": "bg-amber-500/15 text-amber-400 border border-amber-500/20",
 };
 
 export function OpenSourceSection() {
+  const [featured, ...rest] = projects;
+
   return (
     <SectionContainer pill="Open Source">
       <div id="projects" className="scroll-mt-20" />
@@ -54,57 +56,104 @@ export function OpenSourceSection() {
         all free to use and fork.
       </p>
 
-      <div className="grid lg:grid-cols-3 gap-6 mt-12">
-        {projects.map((project, i) => (
-          <motion.div
-            key={project.title}
-            className="glass-card p-8 flex flex-col"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: i * 0.1 }}
-          >
-            <project.icon className="w-8 h-8 text-accent" />
-            <h3 className="font-bold text-heading mt-4 text-lg">{project.title}</h3>
-            <p className="text-body mt-2 text-sm leading-relaxed flex-1">{project.description}</p>
-            <div className="flex flex-wrap gap-2 mt-4">
-              {project.tags.map((tag) => (
-                <span key={tag} className="px-2 py-0.5 rounded-md bg-white/5 text-muted text-xs">
+      <div className="mt-12 space-y-5">
+        {/* Featured project — horizontal layout */}
+        <motion.div
+          className="glass-card p-8 md:p-10 grid md:grid-cols-[1fr_auto] gap-8 items-start"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+        >
+          <div>
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-10 h-10 rounded-xl bg-accent/10 border border-accent/15 flex items-center justify-center">
+                <featured.icon className="w-5 h-5 text-accent" />
+              </div>
+              <span className={`${statusStyles[featured.status]} rounded-full px-3 py-1 text-xs font-medium`}>
+                {featured.status}
+              </span>
+            </div>
+            <h3 className="text-2xl font-bold text-heading">{featured.title}</h3>
+            <p className="text-body mt-3 leading-relaxed max-w-lg">{featured.description}</p>
+            <div className="flex flex-wrap gap-2 mt-5">
+              {featured.tags.map((tag) => (
+                <span key={tag} className="px-3 py-1 rounded-lg bg-white/5 text-muted text-xs border border-white/[0.06]">
                   {tag}
                 </span>
               ))}
             </div>
-            <div className="flex items-center justify-between mt-5">
-              <span className={`${statusStyles[project.status]} rounded-full px-3 py-1 text-xs`}>
-                {project.status}
-              </span>
-              <div className="flex items-center gap-3">
-                {project.site && (
-                  <a
-                    href={project.site}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-body hover:text-heading text-sm transition-colors"
-                  >
-                    Live &rarr;
-                  </a>
-                )}
-                {project.href && project.href !== "#" ? (
+          </div>
+
+          <div className="flex md:flex-col gap-3 items-start shrink-0">
+            {featured.site && (
+              <a
+                href={featured.site}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm font-medium text-body hover:text-heading transition-colors border border-white/10 hover:border-white/20 rounded-xl px-4 py-2.5 whitespace-nowrap"
+              >
+                Live site <ArrowUpRight className="w-3.5 h-3.5" />
+              </a>
+            )}
+            {featured.href && (
+              <a
+                href={featured.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm font-medium text-accent hover:text-accent-light transition-colors border border-accent/25 hover:border-accent/40 rounded-xl px-4 py-2.5 whitespace-nowrap"
+              >
+                GitHub <ArrowUpRight className="w-3.5 h-3.5" />
+              </a>
+            )}
+          </div>
+        </motion.div>
+
+        {/* Secondary projects — 2-col grid */}
+        <div className="grid md:grid-cols-2 gap-5">
+          {rest.map((project, i) => (
+            <motion.div
+              key={project.title}
+              className="glass-card p-7 flex flex-col"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: (i + 1) * 0.1 }}
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-9 h-9 rounded-lg bg-white/[0.05] border border-white/[0.07] flex items-center justify-center">
+                  <project.icon className="w-4 h-4 text-muted" />
+                </div>
+                <span className={`${statusStyles[project.status]} rounded-full px-2.5 py-0.5 text-xs font-medium`}>
+                  {project.status}
+                </span>
+              </div>
+              <h3 className="font-bold text-heading text-lg">{project.title}</h3>
+              <p className="text-body mt-2 text-sm leading-relaxed flex-1">{project.description}</p>
+              <div className="flex flex-wrap gap-1.5 mt-4">
+                {project.tags.map((tag) => (
+                  <span key={tag} className="px-2 py-0.5 rounded-md bg-white/5 text-muted text-xs">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <div className="flex items-center gap-3 mt-5 pt-4 border-t border-white/[0.05]">
+                {project.href ? (
                   <a
                     href={project.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-accent hover:text-accent-light text-sm transition-colors"
+                    className="text-accent hover:text-accent-light text-sm transition-colors flex items-center gap-1.5"
                   >
-                    GitHub &rarr;
+                    GitHub <ArrowUpRight className="w-3.5 h-3.5" />
                   </a>
-                ) : !project.href ? (
+                ) : (
                   <span className="text-muted text-sm">Coming soon</span>
-                ) : null}
+                )}
               </div>
-            </div>
-          </motion.div>
-        ))}
+            </motion.div>
+          ))}
+        </div>
       </div>
     </SectionContainer>
   );

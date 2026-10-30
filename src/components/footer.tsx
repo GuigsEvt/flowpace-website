@@ -53,7 +53,7 @@ export function Footer() {
           </p>
           <div className="flex items-center gap-4 mt-4 md:mt-0">
             <a
-              href="https://linkedin.com/in/guillaume-evrat"
+              href="https://www.linkedin.com/in/guillaume-evrat-23583461/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted hover:text-heading transition-colors"
